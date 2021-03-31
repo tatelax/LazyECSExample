@@ -1,5 +1,11 @@
 {
   "dependencies": {
+    "com.kinematic.games.lazyecs": {
+      "version": "file:E:/LazyECS/LazyECS",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {}
+    },
     "com.unity.collab-proxy": {
       "version": "1.2.16",
       "depth": 0,
