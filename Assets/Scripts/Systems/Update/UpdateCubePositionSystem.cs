@@ -6,12 +6,12 @@ using UnityEngine;
 
 namespace Systems.Update
 {
-	public class TestUpdateSystem : IUpdateSystem
+	public class UpdateCubePositionSystem : IUpdateSystem
 	{
 		private readonly MainWorld mainWorld;
 		private Group testGroup;
 		
-		public TestUpdateSystem(MainWorld world)
+		public UpdateCubePositionSystem(MainWorld world)
 		{
 			mainWorld = world;
 			testGroup = mainWorld.CreateGroup(GroupType.All, new []

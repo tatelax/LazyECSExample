@@ -9,7 +9,7 @@ namespace SampleGame.Worlds
 		{
 			features = new Feature[]
 			{
-				new TestFeature()
+				new GameFeatures()
 			};
 		}
 	}

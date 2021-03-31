@@ -5,18 +5,18 @@ using UnityEngine;
 
 namespace SampleGame.Systems.Initialize
 {
-	public class TestInitializeSystem : IInitializeSystem
+	public class CreateCubeEntitySystem : IInitializeSystem
 	{
 		private World mainWorld;
 		
-		public TestInitializeSystem(MainWorld world)
+		public CreateCubeEntitySystem(MainWorld world)
 		{
 			mainWorld = world;
 		}
 		
 		public void Initialize()
 		{
-			mainWorld.CreateEntity<GameEntity>().Set<GameObjectComponent>(new GameObject("My Object"));
+			mainWorld.CreateEntity<GameEntity>().Set<GameObjectComponent>(GameObject.CreatePrimitive(PrimitiveType.Cube));
 		}
 	}
 }
