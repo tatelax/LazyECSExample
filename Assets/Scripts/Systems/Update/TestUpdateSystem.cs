@@ -1,13 +1,14 @@
-﻿using LazyECS;
-using SampleGame.Components;
+﻿using Components;
+using LazyECS;
+using LazyECS.Entity;
 using SampleGame.Worlds;
 using UnityEngine;
 
-namespace SampleGame.Systems.Update
+namespace Systems.Update
 {
 	public class TestUpdateSystem : IUpdateSystem
 	{
-		private MainWorld mainWorld;
+		private readonly MainWorld mainWorld;
 		private Group testGroup;
 		
 		public TestUpdateSystem(MainWorld world)
@@ -15,20 +16,26 @@ namespace SampleGame.Systems.Update
 			mainWorld = world;
 			testGroup = mainWorld.CreateGroup(GroupType.All, new []
 			{
-				typeof(PositionComponent),
-				typeof(HelloComponent)
+				typeof(GameObjectComponent)
 			});
 		}
 		
 		public void Update()
 		{
-			for (int i = 0; i < testGroup.Entities.Count; i++)
+			foreach (IEntity entity in testGroup.Entities)
 			{
-				Debug.Log($"Looping through {i} entity");
+				if (!entity.Has<PositionComponent>())
+				{
+					entity.Add<PositionComponent>();
+				}
+				
+				Vector3 currPos = entity.Get<PositionComponent>().Value;
+				Vector3 newPos = new Vector3(currPos.x + 0.01f, currPos.y, currPos.z);
+				
+				Debug.Log($"Changed position to {newPos}");
+				
+				entity.Set<PositionComponent>(newPos);
 			}
-			
-			// GameEntity newEntity = mainWorld.CreateEntity<GameEntity>();
-			// newEntity.Add<PositionComponent>();
 		}
 	}
 }

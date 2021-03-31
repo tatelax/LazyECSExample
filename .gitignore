@@ -35,3 +35,14 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+# Common IntelliJ Platform excludes
+
+*.idea
+
+# User specific
+**/.idea/**/workspace.xml
+**/.idea/**/tasks.xml
+**/.idea/shelf/*
+**/.idea/dictionaries
+**/.idea/httpRequests/

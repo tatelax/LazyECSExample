@@ -1,16 +1,16 @@
 ﻿using LazyECS.Component;
 using UnityEngine;
 
-namespace SampleGame.Components
+namespace Components
 {
 	public class PositionComponent : IComponent
 	{
 		public Vector3 Value { get; private set; }
 
-		public void Set(Vector3 pos)
+		public void Set(object pos)
 		{
 			// I can do whatever validation here that I want
-			Value = pos;
+			Value = (Vector3)pos;
 		}
 	}
 }

@@ -1,8 +1,8 @@
-﻿using LazyECS;
+﻿using Systems.Update;
+using LazyECS;
 using SampleGame.Systems.Cleanup;
 using SampleGame.Systems.Initialize;
 using SampleGame.Systems.Teardown;
-using SampleGame.Systems.Update;
 using SampleGame.Worlds;
 
 namespace SampleGame.Features
@@ -16,6 +16,7 @@ namespace SampleGame.Features
 			Systems = new LazyECS.Systems()
 				.Add(new TestInitializeSystem(mainWorld))
 				.Add(new TestUpdateSystem(mainWorld))
+				.Add(new MoveGameObjectSystem(mainWorld))
 				.Add(new TestTeardownSystem())
 				.Add(new TestCleanupSystem());
 		}

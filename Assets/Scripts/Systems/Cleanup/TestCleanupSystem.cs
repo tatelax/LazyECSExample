@@ -6,7 +6,7 @@ namespace SampleGame.Systems.Cleanup
 	{
 		public void Cleanup()
 		{
-			UnityEngine.Debug.Log("I'm cleaning up!");
+
 		}
 	}
 }

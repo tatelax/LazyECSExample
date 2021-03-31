@@ -10,6 +10,11 @@ namespace SampleGame.Components
 			Value = "";
 		}
 
-		public string Value { get; }
+		private string Value { get; }
+		
+		public void Set(dynamic value)
+		{
+			throw new System.NotImplementedException();
+		}
 	}
 }
