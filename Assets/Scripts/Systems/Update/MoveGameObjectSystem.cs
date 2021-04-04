@@ -1,4 +1,6 @@
-﻿using Components;
+﻿using System;
+using System.Collections.Generic;
+using Components;
 using LazyECS;
 using LazyECS.Entity;
 using SampleGame.Worlds;
@@ -13,7 +15,7 @@ namespace Systems.Update
 		public MoveGameObjectSystem(MainWorld world)
 		{
 			mainWorld = world;
-			gameObjectsGroup = mainWorld.CreateGroup(GroupType.All, new []
+			gameObjectsGroup = mainWorld.CreateGroup(GroupType.All, new HashSet<Type>
 			{
 				typeof(GameObjectComponent),
 				typeof(PositionComponent)
@@ -22,7 +24,7 @@ namespace Systems.Update
 		
 		public void Update()
 		{
-			foreach (IEntity entity in gameObjectsGroup.Entities)
+			foreach (Entity entity in gameObjectsGroup.Entities)
 			{
 				entity.Get<GameObjectComponent>().Value.transform.position = entity.Get<PositionComponent>().Value;
 			}

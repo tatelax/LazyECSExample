@@ -1,4 +1,6 @@
-﻿using Components;
+﻿using System;
+using System.Collections.Generic;
+using Components;
 using LazyECS;
 using LazyECS.Entity;
 using SampleGame.Worlds;
@@ -14,7 +16,7 @@ namespace Systems.Update
 		public UpdateCubePositionSystem(MainWorld world)
 		{
 			mainWorld = world;
-			testGroup = mainWorld.CreateGroup(GroupType.All, new []
+			testGroup = mainWorld.CreateGroup(GroupType.All, new HashSet<Type>
 			{
 				typeof(GameObjectComponent)
 			});
@@ -22,7 +24,7 @@ namespace Systems.Update
 		
 		public void Update()
 		{
-			foreach (IEntity entity in testGroup.Entities)
+			foreach (Entity entity in testGroup.Entities)
 			{
 				if (!entity.Has<PositionComponent>())
 				{

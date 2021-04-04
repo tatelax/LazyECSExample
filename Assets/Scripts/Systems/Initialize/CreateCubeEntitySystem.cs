@@ -1,5 +1,4 @@
 ﻿using LazyECS;
-using SampleGame.Entities;
 using SampleGame.Worlds;
 using UnityEngine;
 
@@ -16,7 +15,7 @@ namespace SampleGame.Systems.Initialize
 		
 		public void Initialize()
 		{
-			mainWorld.CreateEntity<GameEntity>().Set<GameObjectComponent>(GameObject.CreatePrimitive(PrimitiveType.Cube));
+			mainWorld.CreateEntity().Set<GameObjectComponent>(GameObject.CreatePrimitive(PrimitiveType.Cube));
 		}
 	}
 }
