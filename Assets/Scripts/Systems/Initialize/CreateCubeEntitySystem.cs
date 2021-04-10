@@ -1,8 +1,7 @@
 ﻿using LazyECS;
-using SampleGame.Worlds;
 using UnityEngine;
 
-namespace SampleGame.Systems.Initialize
+namespace Systems.Initialize
 {
 	public class CreateCubeEntitySystem : IInitializeSystem
 	{

@@ -12,5 +12,10 @@ namespace Components
 			// I can do whatever validation here that I want
 			Value = (Vector3)pos;
 		}
+
+		public object Get()
+		{
+			return Value;
+		}
 	}
 }

@@ -1,7 +1,6 @@
 ﻿using LazyECS.Component;
-using UnityEngine;
 
-namespace SampleGame.Components
+namespace Components
 {
 	public class HelloComponent : IComponent
 	{
@@ -10,11 +9,16 @@ namespace SampleGame.Components
 			Value = "";
 		}
 
-		private string Value { get; }
+		private string Value { get; set; }
 		
-		public void Set(dynamic value)
+		public void Set(object value)
 		{
-			throw new System.NotImplementedException();
+			Value = (string)value;
+		}
+
+		public object Get()
+		{
+			return Value;
 		}
 	}
 }

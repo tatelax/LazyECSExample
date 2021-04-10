@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using Components;
 using LazyECS;
 using LazyECS.Entity;
-using SampleGame.Worlds;
 
 namespace Systems.Update
 {

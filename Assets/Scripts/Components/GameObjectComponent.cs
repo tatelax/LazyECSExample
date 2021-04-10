@@ -9,4 +9,9 @@ public class GameObjectComponent : IComponent
 	{
 		Value = (GameObject) value;
 	}
+
+	public object Get()
+	{
+		return Value;
+	}
 }

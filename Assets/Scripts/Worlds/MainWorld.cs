@@ -1,16 +1,13 @@
-﻿using LazyECS;
-using SampleGame.Features;
+﻿using Features;
+using LazyECS;
 
-namespace SampleGame.Worlds
+public class MainWorld : World
 {
-	public class MainWorld : World
+	public MainWorld()
 	{
-		public override void Init()
+		Features = new Feature[]
 		{
-			features = new Feature[]
-			{
-				new GameFeatures()
-			};
-		}
+			new MainFeature(this)
+		};
 	}
 }
