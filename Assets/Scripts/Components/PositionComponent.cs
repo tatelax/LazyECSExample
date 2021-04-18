@@ -7,10 +7,11 @@ namespace Components
 	{
 		public Vector3 Value { get; private set; }
 
-		public void Set(object pos)
+		public bool Set(object pos)
 		{
 			// I can do whatever validation here that I want
 			Value = (Vector3)pos;
+			return true;
 		}
 
 		public object Get()

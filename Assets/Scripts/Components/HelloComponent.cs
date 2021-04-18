@@ -11,9 +11,10 @@ namespace Components
 
 		private string Value { get; set; }
 		
-		public void Set(object value)
+		public bool Set(object value)
 		{
 			Value = (string)value;
+			return true;
 		}
 
 		public object Get()
